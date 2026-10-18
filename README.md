@@ -2,6 +2,18 @@
 
 A standalone Windows desktop application with a modern glassmorphic interface powered by **PyWebView**, dynamic audio normalization, real-time waveform visualizer, and CPU-accelerated **F5-TTS Flow Matching**.
 
+<div align="center">
+  <img src="assets/preview.png" alt="Ahmad Voice Studio Interface" width="95%" />
+  <p><em>Modern glassmorphic interface with live waveform recording, clarity guide, and instant parameter tuning.</em></p>
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="assets/studio_active.png" alt="Ahmad Voice Studio Active Synthesis" width="95%" />
+  <p><em>Studio workflow in action: Reference voice loaded, Roman Urdu synthesis, and real-time waveform playback.</em></p>
+</div>
+
 ---
 
 ## 🌟 Key Features
