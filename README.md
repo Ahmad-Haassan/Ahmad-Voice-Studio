@@ -1,13 +1,36 @@
-# F5-TTS: A Fairytaler that Fakes Fluent and Faithful Speech with Flow Matching
-### CPU-Only Inference Fork with auto-installer and launcher by @Raxephion
+# 🎙️ Ahmad Voice Studio — Neural Voice Cloning & Synthesis
 
-This fork has been modified to ensure smooth and stable inference on **CPU-only** machines. It addresses critical bugs that occur when running the original repository without a dedicated GPU.
-
-**Tested on:**
-- **CPU:** Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz (2.11 GHz)
-- **RAM:** 16 GB
+A standalone Windows desktop application with a modern glassmorphic interface powered by **PyWebView**, dynamic audio normalization, real-time waveform visualizer, and CPU-accelerated **F5-TTS Flow Matching**.
 
 ---
+
+## 🌟 Key Features
+
+* **Desktop Native UI**: Premium glassmorphic interface built with Vanilla CSS, modern typography, and ambient lighting.
+* **Instant Cancel Support**: Pre-forward PyTorch hook allows instantaneous cancellation during any diffusion/ODE step.
+* **Voice Clarity & CFG Controls**: Dynamic Guidance Scale slider (`1.0` to `3.5`) and Quality Presets (`⚡ Draft 16`, `💎 Studio 24`, `🎙️ Master 32`).
+* **Studio Audio Normalization**: Automated 24kHz mono PCM conversion with FFmpeg Dynamic Audio Normalizer (`dynaudnorm`), highpass, and lowpass vocal filtering.
+* **History & Replay Drawer**: Built-in slide-over drawer to replay, download, or delete past voice clone creations.
+* **CPU Optimized**: Multi-threaded flow-matching (`torch.set_num_threads(4)`) for smooth offline execution without a dedicated GPU.
+* **Tensor Alignment Fix**: Resolved DiT cache mismatch when switching sequence lengths or generating in sequential batches.
+
+---
+
+## 🚀 Quick Launch (Desktop App)
+
+To start the desktop application:
+```bat
+cd VoiceStudio
+run.bat
+```
+Or run the included shortcut creator:
+```powershell
+powershell -ExecutionPolicy Bypass -File VoiceStudio\create_shortcut.ps1
+```
+
+---
+
+## 🔬 Core Engine: F5-TTS (CPU Inference)
 
 ### About This Fork and Key Changes
 
