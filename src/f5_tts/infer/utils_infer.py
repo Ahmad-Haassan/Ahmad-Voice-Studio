@@ -522,7 +522,7 @@ def infer_batch_process(
             for chunk in process_batch(gen_text):
                 yield chunk
     else:
-        with ThreadPoolExecutor() as executor:
+        with ThreadPoolExecutor(max_workers=1) as executor:
             futures = [executor.submit(process_batch, gen_text) for gen_text in gen_text_batches]
             for future in progress.tqdm(futures) if progress is not None else futures:
                 result = future.result()

@@ -582,6 +582,8 @@ with gr.Blocks() as app_multistyle:
         visible=False,
     )
 
+
+
     # Logic control to show/hide the cherrypick interface
     show_cherrypick_multistyle.change(
         lambda is_visible: gr.update(visible=is_visible),
@@ -923,7 +925,10 @@ Have a conversation with an AI using your reference voice!
             )
 
         # Handle clear button or system prompt change and reset conversation
-        for user_operation in [clear_btn_chat.click, system_prompt_chat.change, chatbot_interface.clear]:
+        clear_events = [clear_btn_chat.click, system_prompt_chat.change]
+        if hasattr(chatbot_interface, "clear"):
+            clear_events.append(chatbot_interface.clear)
+        for user_operation in clear_events:
             user_operation(
                 clear_conversation,
                 outputs=[chatbot_interface, audio_output_chat],

@@ -194,15 +194,23 @@ class DiT(nn.Module):
         seq_len = x.shape[1]
         if cache:
             if drop_text:
-                if self.text_uncond is None:
+                if self.text_uncond is None or getattr(self.text_uncond, "shape", [0, 0])[1] != seq_len:
                     self.text_uncond = self.text_embed(text, seq_len, drop_text=True)
                 text_embed = self.text_uncond
             else:
-                if self.text_cond is None:
+                if self.text_cond is None or getattr(self.text_cond, "shape", [0, 0])[1] != seq_len:
                     self.text_cond = self.text_embed(text, seq_len, drop_text=False)
                 text_embed = self.text_cond
         else:
             text_embed = self.text_embed(text, seq_len, drop_text=drop_text)
+
+        # Guarantee tensor sequence alignment
+        if text_embed.shape[1] != seq_len:
+            if text_embed.shape[1] > seq_len:
+                text_embed = text_embed[:, :seq_len, :]
+            else:
+                import torch.nn.functional as F
+                text_embed = F.pad(text_embed, (0, 0, 0, seq_len - text_embed.shape[1]), value=0.0)
 
         x = self.input_embed(x, cond, text_embed, drop_audio_cond=drop_audio_cond)
 
