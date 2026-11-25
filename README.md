@@ -1,28 +1,28 @@
-# 🎙️ Ahmad Voice Studio — Neural Voice Cloning & Synthesis
+# Ahmad Voice Studio — Neural Voice Cloning & Synthesis
 
-A standalone Windows desktop application with a modern glassmorphic interface powered by **PyWebView**, dynamic audio normalization, real-time waveform visualizer, and CPU-accelerated **F5-TTS Flow Matching**.
+A standalone Windows desktop application with a modern glassmorphic interface powered by **PyWebView**, dynamic audio normalization, real-time waveform visualizer and CPU-accelerated **F5-TTS Flow Matching**.
 
 <div align="center">
   <img src="assets/preview.png" alt="Ahmad Voice Studio Interface" width="95%" />
-  <p><em>Modern glassmorphic interface with live waveform recording, clarity guide, and instant parameter tuning.</em></p>
+  <p><em>Modern glassmorphic interface with live waveform recording, clarity guide and instant parameter tuning.</em></p>
 </div>
 
 <br/>
 
 <div align="center">
   <img src="assets/studio_active.png" alt="Ahmad Voice Studio Active Synthesis" width="95%" />
-  <p><em>Studio workflow in action: Reference voice loaded, Roman Urdu synthesis, and real-time waveform playback.</em></p>
+  <p><em>Studio workflow in action: Reference voice loaded, Roman Urdu synthesis and real-time waveform playback.</em></p>
 </div>
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
-* **Desktop Native UI**: Premium glassmorphic interface built with Vanilla CSS, modern typography, and ambient lighting.
-* **Instant Cancel Support**: Pre-forward PyTorch hook allows instantaneous cancellation during any diffusion/ODE step.
-* **Voice Clarity & CFG Controls**: Dynamic Guidance Scale slider (`1.0` to `3.5`) and Quality Presets (`⚡ Draft 16`, `💎 Studio 24`, `🎙️ Master 32`).
-* **Studio Audio Normalization**: Automated 24kHz mono PCM conversion with FFmpeg Dynamic Audio Normalizer (`dynaudnorm`), highpass, and lowpass vocal filtering.
-* **History & Replay Drawer**: Built-in slide-over drawer to replay, download, or delete past voice clone creations.
+* **Desktop Native UI**: Clean interface built with Vanilla CSS, modern typography and ambient dark styling.
+* **Instant Cancel Support**: Pre-forward PyTorch hook allows instantaneous cancellation during any diffusion or ODE step.
+* **Voice Clarity & CFG Controls**: Dynamic Guidance Scale slider (`1.0` to `3.5`) and Quality Presets (`Draft 16`, `Studio 24` and `Master 32`).
+* **Studio Audio Normalization**: Automated 24kHz mono PCM conversion with FFmpeg Dynamic Audio Normalizer (`dynaudnorm`), highpass and lowpass vocal filtering.
+* **History & Replay Drawer**: Built-in slide-over drawer to replay, download or delete past voice clone creations.
 * **CPU Optimized**: Multi-threaded flow-matching (`torch.set_num_threads(4)`) for smooth offline execution without a dedicated GPU.
 * **Tensor Alignment Fix**: Resolved DiT cache mismatch when switching sequence lengths or generating in sequential batches.
 
